@@ -1,0 +1,100 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{2DAB880B-99B4-887C-2230-9F7C8E38947C}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core">
+      <UniqueIdentifier>{A5D31CCF-91A0-77DA-BAB9-6582A6E5AC68}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\Renderer">
+      <UniqueIdentifier>{EB009555-5717-93EB-A08E-1E0D0CE46373}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\VulkanRender">
+      <UniqueIdentifier>{45BCAC57-B128-6852-7A1C-00B0E6478ABA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\application">
+      <UniqueIdentifier>{08578642-F4E5-0F0C-9D04-2407897220B2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\Core\logger">
+      <UniqueIdentifier>{F4D170E6-605D-DEAA-696E-619FD5783AAB}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor">
+      <UniqueIdentifier>{B3738122-9F15-ACF8-88D0-BF4C74113349}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="vendor\stb">
+      <UniqueIdentifier>{8BD3C5A8-778B-07F6-E092-E051CC69A2E6}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\Core\GraphicApiEnum.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Renderer\GLUtils.h">
+      <Filter>src\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Renderer\Renderer.h">
+      <Filter>src\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\Renderer\Shader.h">
+      <Filter>src\Core\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\VulkanRender\VulkanInstance.h">
+      <Filter>src\Core\VulkanRender</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\application\Application.h">
+      <Filter>src\Core\application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\application\Event.h">
+      <Filter>src\Core\application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\application\Layer.h">
+      <Filter>src\Core\application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\application\Window.h">
+      <Filter>src\Core\application</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\healthcheck.h">
+      <Filter>src\Core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\logger\logger.h">
+      <Filter>src\Core\logger</Filter>
+    </ClInclude>
+    <ClInclude Include="vendor\stb\stb_image.h">
+      <Filter>vendor\stb</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\VulkanRender\VulkanDevices.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanWindowSurface.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Core\Renderer\GLUtils.cpp">
+      <Filter>src\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Renderer\Renderer.cpp">
+      <Filter>src\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\Renderer\Shader.cpp">
+      <Filter>src\Core\Renderer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\VulkanRender\VulkanInstance.cpp">
+      <Filter>src\Core\VulkanRender</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\application\Application.cpp">
+      <Filter>src\Core\application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\application\Window.cpp">
+      <Filter>src\Core\application</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\healthcheck.cpp">
+      <Filter>src\Core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\logger\logger.cpp">
+      <Filter>src\Core\logger</Filter>
+    </ClCompile>
+    <ClCompile Include="vendor\stb\stb_image.cpp">
+      <Filter>vendor\stb</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\VulkanRender\VulkanDevices.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanWindowSurface.cpp" />
+  </ItemGroup>
+</Project>
