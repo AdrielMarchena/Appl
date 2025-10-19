@@ -13,8 +13,6 @@
 #include <limits> // Necessary for std::numeric_limits
 #include <algorithm> // Necessary for std::clamp
 
-#include <GLFW/glfw3.h>
-
 #include "Core/application/Application.h"
 
 namespace Core::Vulkan {
