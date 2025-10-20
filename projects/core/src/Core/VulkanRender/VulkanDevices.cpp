@@ -33,22 +33,23 @@ namespace Core::Vulkan {
 
 	void VulkanDevices::CleanUp()
 	{
-		if (m_Device) {
-			vkDestroyDevice(m_Device, nullptr);
-			m_Device = VK_NULL_HANDLE;
-			m_PhysicalDevice = VK_NULL_HANDLE;
-			m_GraphicsQueue = VK_NULL_HANDLE;
+		if (!m_Device) return;
 
-			for (auto imageView : m_SwapChainImageViews) {
-				if (!imageView) continue;
- 				
-				vkDestroyImageView(m_Device, imageView, nullptr);
-			}
+		for (auto imageView : m_SwapChainImageViews) {
+			if (!imageView) continue;
+ 			
+			vkDestroyImageView(m_Device, imageView, nullptr);
 		}
 
-		if (m_Device && m_SwapChain) {
+		if (m_SwapChain) {
 			vkDestroySwapchainKHR(m_Device, m_SwapChain, nullptr);
+			m_SwapChain = VK_NULL_HANDLE;
 		}
+
+		vkDestroyDevice(m_Device, nullptr);
+		m_Device = VK_NULL_HANDLE;
+		m_PhysicalDevice = VK_NULL_HANDLE;
+		m_GraphicsQueue = VK_NULL_HANDLE;
 	}
 
 	void VulkanDevices::CreatePhysicalDevice()
@@ -144,10 +145,6 @@ namespace Core::Vulkan {
 			imageCount = swapChainSupport.capabilities.maxImageCount;
 		}
 
-		vkGetSwapchainImagesKHR(m_Device, m_SwapChain, &imageCount, nullptr);
-		m_SwapChainImages.resize(imageCount);
-		vkGetSwapchainImagesKHR(m_Device, m_SwapChain, &imageCount, m_SwapChainImages.data());
-
 		m_SwapChainImageFormat = surfaceFormat.format;
 		m_SwapChainExtent = extent;
 
@@ -187,6 +184,10 @@ namespace Core::Vulkan {
 		if (vkCreateSwapchainKHR(m_Device, &createInfo, nullptr, &m_SwapChain) != VK_SUCCESS) {
 			throw std::runtime_error("failed to create swap chain!");
 		}
+
+		vkGetSwapchainImagesKHR(m_Device, m_SwapChain, &imageCount, nullptr);
+		m_SwapChainImages.resize(imageCount);
+		vkGetSwapchainImagesKHR(m_Device, m_SwapChain, &imageCount, m_SwapChainImages.data());
 	}
 
 	std::vector<VkDeviceQueueCreateInfo> VulkanDevices::GetPresentQueueCreationInfo()

@@ -33,7 +33,18 @@ namespace Core::Vulkan
 		~VulkanDevices();
 
 		VkPhysicalDevice GetPhysicalDevice() const { return m_PhysicalDevice; }
+		VkDevice GetDevice() const { return m_Device; }
 		void CleanUp();
+
+		VkExtent2D GetSwapChainExtent() const { return m_SwapChainExtent; }
+		VkFormat GetSwapChainImageFormat() const { return m_SwapChainImageFormat; }
+		const std::vector<VkImageView>& GetSwapChainImageViews() const { return m_SwapChainImageViews; }
+		VkSwapchainKHR GetSwapChain() const { return m_SwapChain; }
+
+		VkQueue GetGraphicsQueue() const {	return m_GraphicsQueue;	}
+		VkQueue GetPresentQueue() const {	return m_PresentQueue;	}
+
+		QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice device);
 	private:
 		void CreatePhysicalDevice();
 		void CreateLogicalDevice();
@@ -48,7 +59,6 @@ namespace Core::Vulkan
 
 		std::shared_ptr<VulkanInstance> m_VulkanInstance;
 		std::shared_ptr<VulkanWindowSurface> m_VulkanWindowSurface;
-		QueueFamilyIndices FindQueueFamilies(VkPhysicalDevice device);
 		VkPhysicalDevice m_PhysicalDevice = VK_NULL_HANDLE;
 		VkDevice m_Device = VK_NULL_HANDLE;
 		VkQueue m_GraphicsQueue = VK_NULL_HANDLE;

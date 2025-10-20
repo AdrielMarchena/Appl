@@ -267,29 +267,35 @@
     <ClInclude Include="src\Core\Renderer\GLUtils.h" />
     <ClInclude Include="src\Core\Renderer\Renderer.h" />
     <ClInclude Include="src\Core\Renderer\Shader.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanCommanBuffers.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanDevices.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanFramebuffers.h" />
     <ClInclude Include="src\Core\VulkanRender\VulkanInstance.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanGraphicsPipeline.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanWindowSurface.h" />
     <ClInclude Include="src\Core\application\Application.h" />
     <ClInclude Include="src\Core\application\Event.h" />
     <ClInclude Include="src\Core\application\Layer.h" />
     <ClInclude Include="src\Core\application\Window.h" />
     <ClInclude Include="src\Core\healthcheck.h" />
     <ClInclude Include="src\Core\logger\logger.h" />
-    <ClInclude Include="src\Core\VulkanRender\VulkanDevices.h" />
     <ClInclude Include="vendor\stb\stb_image.h" />
-    <ClInclude Include="src\Core\VulkanRender\VulkanWindowSurface.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Renderer\GLUtils.cpp" />
     <ClCompile Include="src\Core\Renderer\Renderer.cpp" />
     <ClCompile Include="src\Core\Renderer\Shader.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanCommanBuffers.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanDevices.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanFramebuffers.cpp" />
     <ClCompile Include="src\Core\VulkanRender\VulkanInstance.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanGraphicsPipeline.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanWindowSurface.cpp" />
     <ClCompile Include="src\Core\application\Application.cpp" />
     <ClCompile Include="src\Core\application\Window.cpp" />
     <ClCompile Include="src\Core\healthcheck.cpp" />
     <ClCompile Include="src\Core\logger\logger.cpp" />
-    <ClCompile Include="src\Core\VulkanRender\VulkanDevices.cpp" />
     <ClCompile Include="vendor\stb\stb_image.cpp" />
-    <ClCompile Include="src\Core\VulkanRender\VulkanWindowSurface.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\..\vendors\glfw\GLFW.vcxproj">

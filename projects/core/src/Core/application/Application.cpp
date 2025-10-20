@@ -84,6 +84,9 @@ namespace Core {
 
 			m_Window->Update();
 		}
+
+		for (const std::unique_ptr<Layer>& layer : m_LayerStack)
+			layer->OnEndLoop();
 	}
 
 	void Application::Stop()

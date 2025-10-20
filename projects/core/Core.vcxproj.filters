@@ -39,7 +39,13 @@
     <ClInclude Include="src\Core\Renderer\Shader.h">
       <Filter>src\Core\Renderer</Filter>
     </ClInclude>
+    <ClInclude Include="src\Core\VulkanRender\VulkanDevices.h">
+      <Filter>src\Core\VulkanRender</Filter>
+    </ClInclude>
     <ClInclude Include="src\Core\VulkanRender\VulkanInstance.h">
+      <Filter>src\Core\VulkanRender</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Core\VulkanRender\VulkanWindowSurface.h">
       <Filter>src\Core\VulkanRender</Filter>
     </ClInclude>
     <ClInclude Include="src\Core\application\Application.h">
@@ -63,8 +69,9 @@
     <ClInclude Include="vendor\stb\stb_image.h">
       <Filter>vendor\stb</Filter>
     </ClInclude>
-    <ClInclude Include="src\Core\VulkanRender\VulkanDevices.h" />
-    <ClInclude Include="src\Core\VulkanRender\VulkanWindowSurface.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanGraphicsPipeline.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanFramebuffers.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanCommanBuffers.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Core\Renderer\GLUtils.cpp">
@@ -76,7 +83,13 @@
     <ClCompile Include="src\Core\Renderer\Shader.cpp">
       <Filter>src\Core\Renderer</Filter>
     </ClCompile>
+    <ClCompile Include="src\Core\VulkanRender\VulkanDevices.cpp">
+      <Filter>src\Core\VulkanRender</Filter>
+    </ClCompile>
     <ClCompile Include="src\Core\VulkanRender\VulkanInstance.cpp">
+      <Filter>src\Core\VulkanRender</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Core\VulkanRender\VulkanWindowSurface.cpp">
       <Filter>src\Core\VulkanRender</Filter>
     </ClCompile>
     <ClCompile Include="src\Core\application\Application.cpp">
@@ -94,7 +107,8 @@
     <ClCompile Include="vendor\stb\stb_image.cpp">
       <Filter>vendor\stb</Filter>
     </ClCompile>
-    <ClCompile Include="src\Core\VulkanRender\VulkanDevices.cpp" />
-    <ClCompile Include="src\Core\VulkanRender\VulkanWindowSurface.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanGraphicsPipeline.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanFramebuffers.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanCommanBuffers.cpp" />
   </ItemGroup>
 </Project>
