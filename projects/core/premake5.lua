@@ -24,13 +24,15 @@ project "Core"
         "%{IncludeDirectories.vulkan}",
         "%{IncludeDirectories.imgui}",
         "%{IncludeDirectories.entt}",
+        "%{IncludeDirectories.webgpu}",
 
         "src/",
         "vendor/",
     }
 
     libdirs {
-        "%{LibraryDirectories.vulkan}"
+        "%{LibraryDirectories.vulkan}",
+        "%{LibraryDirectories.webgpu}"
     }
 
     links {
@@ -42,6 +44,7 @@ project "Core"
 
     filter "system:windows"
         systemversion "latest"
+        defines { "WEBGPU_BACKEND_D3D12" }
     
     filter { "action:vs*" }
         buildoptions { "/utf-8" }

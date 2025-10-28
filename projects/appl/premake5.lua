@@ -25,7 +25,8 @@ project "Appl"
     }
 
     libdirs {
-        "%{LibraryDirectories.vulkan}"
+        "%{LibraryDirectories.vulkan}",
+        "%{LibraryDirectories.webgpu}"
     }
 
     links {
@@ -33,11 +34,13 @@ project "Appl"
         "Core",
         "glad",
         "vulkan-1.lib",
-        "ImGui"
+        "ImGui",
+        "wgpu_native.lib"
     }
 
     filter "system:windows"
         systemversion "latest"
+        defines { "WEBGPU_BACKEND_D3D12" }
 
     filter { "action:vs*" }
         buildoptions { "/utf-8" }
