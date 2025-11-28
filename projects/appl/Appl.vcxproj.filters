@@ -12,12 +12,18 @@
     <ClInclude Include="src\Layers\VulkanDemoLayer.h">
       <Filter>Layers</Filter>
     </ClInclude>
+    <ClInclude Include="src\Layers\WebGPU.h">
+      <Filter>Layers</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\Layers\DemoLayer.cpp">
       <Filter>Layers</Filter>
     </ClCompile>
     <ClCompile Include="src\Layers\VulkanDemoLayer.cpp">
+      <Filter>Layers</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Layers\WebGPU.cpp">
       <Filter>Layers</Filter>
     </ClCompile>
     <ClCompile Include="src\main.cpp" />

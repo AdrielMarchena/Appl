@@ -132,8 +132,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CORE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBGPU_BACKEND_D3D12;CORE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;..\..\vendors\webgpu-headers;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -154,8 +154,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CORE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBGPU_BACKEND_D3D12;CORE_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;..\..\vendors\webgpu-headers;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
@@ -176,8 +176,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CORE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBGPU_BACKEND_D3D12;CORE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;..\..\vendors\webgpu-headers;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -202,8 +202,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <PreprocessorDefinitions>CORE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBGPU_BACKEND_D3D12;CORE_RELEASE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;..\..\vendors\webgpu-headers;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Full</Optimization>
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
@@ -228,7 +228,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBGPU_BACKEND_D3D12;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;..\..\vendors\webgpu-headers;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
@@ -247,7 +248,8 @@
     <ClCompile>
       <PrecompiledHeader>NotUsing</PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
-      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WEBGPU_BACKEND_D3D12;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\..\vendors\glfw\include;..\..\vendors\spdlog\include;..\..\vendors\glm;..\..\vendors\glad\include;C:\VulkanSDK\1.4.328.1\Include;..\..\vendors\imgui;..\..\vendors\entt\single_include;..\..\vendors\webgpu-headers;src;vendor;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <Optimization>Disabled</Optimization>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <AdditionalOptions>/utf-8 %(AdditionalOptions)</AdditionalOptions>
@@ -270,8 +272,8 @@
     <ClInclude Include="src\Core\VulkanRender\VulkanCommanBuffers.h" />
     <ClInclude Include="src\Core\VulkanRender\VulkanDevices.h" />
     <ClInclude Include="src\Core\VulkanRender\VulkanFramebuffers.h" />
-    <ClInclude Include="src\Core\VulkanRender\VulkanInstance.h" />
     <ClInclude Include="src\Core\VulkanRender\VulkanGraphicsPipeline.h" />
+    <ClInclude Include="src\Core\VulkanRender\VulkanInstance.h" />
     <ClInclude Include="src\Core\VulkanRender\VulkanWindowSurface.h" />
     <ClInclude Include="src\Core\application\Application.h" />
     <ClInclude Include="src\Core\application\Event.h" />
@@ -279,6 +281,10 @@
     <ClInclude Include="src\Core\application\Window.h" />
     <ClInclude Include="src\Core\healthcheck.h" />
     <ClInclude Include="src\Core\logger\logger.h" />
+    <ClInclude Include="src\Core\WebGPU\WebGPUFramebuffer.h" />
+    <ClInclude Include="src\Core\WebGPU\WebGPUInstance.h" />
+    <ClInclude Include="src\Core\WebGPU\WebGPUPipeline.h" />
+    <ClInclude Include="src\Core\WebGPU\WebGPUSurface.h" />
     <ClInclude Include="vendor\stb\stb_image.h" />
   </ItemGroup>
   <ItemGroup>
@@ -288,13 +294,17 @@
     <ClCompile Include="src\Core\VulkanRender\VulkanCommanBuffers.cpp" />
     <ClCompile Include="src\Core\VulkanRender\VulkanDevices.cpp" />
     <ClCompile Include="src\Core\VulkanRender\VulkanFramebuffers.cpp" />
-    <ClCompile Include="src\Core\VulkanRender\VulkanInstance.cpp" />
     <ClCompile Include="src\Core\VulkanRender\VulkanGraphicsPipeline.cpp" />
+    <ClCompile Include="src\Core\VulkanRender\VulkanInstance.cpp" />
     <ClCompile Include="src\Core\VulkanRender\VulkanWindowSurface.cpp" />
     <ClCompile Include="src\Core\application\Application.cpp" />
     <ClCompile Include="src\Core\application\Window.cpp" />
     <ClCompile Include="src\Core\healthcheck.cpp" />
     <ClCompile Include="src\Core\logger\logger.cpp" />
+    <ClCompile Include="src\Core\WebGPU\WebGPUFramebuffer.cpp" />
+    <ClCompile Include="src\Core\WebGPU\WebGPUInstance.cpp" />
+    <ClCompile Include="src\Core\WebGPU\WebGPUPipeline.cpp" />
+    <ClCompile Include="src\Core\WebGPU\WebGPUSurface.cpp" />
     <ClCompile Include="vendor\stb\stb_image.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -306,6 +316,9 @@
     </ProjectReference>
     <ProjectReference Include="..\..\vendors\imgui\ImGui.vcxproj">
       <Project>{C0FF640D-2C14-8DBE-F595-301E616989EF}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\..\vendors\wgpu-native\WebGPU.vcxproj">
+      <Project>{2F742ADA-1B16-55B0-04D1-6804F011DC00}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

@@ -33,6 +33,7 @@ outputdir = "%{cfg.buildcfg}-%{cfg.system}-%{cfg.architecture}"
 rootDir = "../"
 
 group "Dependencies"
+include "vendors/wgpu-native"
 include "vendors/glfw"
 include "vendors/glad"
 include "vendors/imgui"

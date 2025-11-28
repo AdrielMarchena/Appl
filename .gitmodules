@@ -16,3 +16,12 @@
 [submodule "vendors/entt"]
 	path = vendors/entt
 	url = https://github.com/skypjack/entt.git
+[submodule "vendor/wgpu-native"]
+	path = vendor/wgpu-native
+	url = https://github.com/gfx-rs/wgpu-native.git
+[submodule "vendors/wgpu-native"]
+	path = vendors/wgpu-native
+	url = https://github.com/gfx-rs/wgpu-native.git
+[submodule "vendors/webgpu-headers"]
+	path = vendors/webgpu-headers
+	url = https://github.com/webgpu-native/webgpu-headers.git

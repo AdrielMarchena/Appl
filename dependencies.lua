@@ -8,10 +8,9 @@ IncludeDirectories["glad"] = "%{wks.location}/vendors/glad/include"
 IncludeDirectories["vulkan"] = "C:/VulkanSDK/1.4.328.1/Include"
 IncludeDirectories["imgui"] = "%{wks.location}/vendors/imgui"
 IncludeDirectories["entt"] = "%{wks.location}/vendors/entt/single_include"
-IncludeDirectories.webgpu = "%{wks.location}/vendor/wgpu/include"
+IncludeDirectories["webgpu"] = "%{wks.location}/vendors/webgpu-headers"
 
 
 LibraryDirectories = {}
 
 LibraryDirectories["vulkan"] = "C:/VulkanSDK/1.4.328.1/Lib"
-LibraryDirectories.webgpu = "%{wks.location}/vendor/wgpu/lib"

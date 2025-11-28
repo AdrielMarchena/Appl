@@ -32,14 +32,14 @@ project "Core"
 
     libdirs {
         "%{LibraryDirectories.vulkan}",
-        "%{LibraryDirectories.webgpu}"
     }
 
     links {
         "GLFW",
         "glad",
         "vulkan-1.lib",
-        "ImGui"
+        "ImGui",
+        "WebGPU"
     }
 
     filter "system:windows"

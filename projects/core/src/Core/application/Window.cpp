@@ -1,5 +1,9 @@
 #include "Window.h"
 
+#define GLFW_EXPOSE_NATIVE_WIN32  // expose native Win32 window handle
+#include <GLFW/glfw3.h>
+#include <GLFW/glfw3native.h>    // for glfwGetWin32Window
+#include <webgpu.h>
 #include "Core/Renderer/GLUtils.h"
 
 #include <iostream>
@@ -27,6 +31,10 @@ namespace Core {
 		if (m_Specification.GraphicApi == GraphicApi::OPENGL)
 		{
 			CreateOpenGl();
+		}
+
+		if (m_Specification.GraphicApi == GraphicApi::WebGPU) {
+
 		}
 	}
 
@@ -84,5 +92,16 @@ namespace Core {
 		gladLoadGL(glfwGetProcAddress);
 
 		glfwSwapInterval(m_Specification.VSync ? 1 : 0);
+	}
+
+	void Window::CreateWebGPU()
+	{
+		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
+		glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
+
+		glfwGetWGPUSurface
+
+		m_Handle = glfwCreateWindow(m_Specification.Width, m_Specification.Height,
+			m_Specification.Title.c_str(), nullptr, nullptr);
 	}
 }

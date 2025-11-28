@@ -26,7 +26,6 @@ project "Appl"
 
     libdirs {
         "%{LibraryDirectories.vulkan}",
-        "%{LibraryDirectories.webgpu}"
     }
 
     links {
@@ -35,7 +34,7 @@ project "Appl"
         "glad",
         "vulkan-1.lib",
         "ImGui",
-        "wgpu_native.lib"
+        "WebGPU"
     }
 
     filter "system:windows"

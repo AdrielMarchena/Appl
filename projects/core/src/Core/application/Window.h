@@ -40,6 +40,7 @@ namespace Core {
 	private:
 		void CreateVulkan();
 		void CreateOpenGl();
+		void CreateWebGPU();
 	private:
 		WindowSpecification m_Specification;
 		GLFWwindow* m_Handle = nullptr;
