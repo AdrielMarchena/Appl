@@ -32,5 +32,8 @@
         "path",
         "define",
         "buildoptions"
-    ]
+    ],
+    "files.associations": {
+        "iostream": "cpp"
+    }
 }

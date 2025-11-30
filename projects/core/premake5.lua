@@ -1,7 +1,7 @@
 project "Core"
     kind "StaticLib"
     language "C++"
-    cppdialect "C++23"
+    cppdialect "C++latest"
     staticruntime "on"
 
     targetdir ("%{wks.location}/bin/%{cfg.buildcfg}/%{prj.name}")
@@ -16,35 +16,27 @@ project "Core"
         "vendor/**.cpp",
     }
 
+    removefiles {
+        "src/Core/Renderer/**",
+    }
+
     includedirs {
-        "%{IncludeDirectories.GLFW}",
         "%{IncludeDirectories.spdlog}",
         "%{IncludeDirectories.glm}",
-        "%{IncludeDirectories.glad}",
-        "%{IncludeDirectories.vulkan}",
         "%{IncludeDirectories.imgui}",
         "%{IncludeDirectories.entt}",
-        "%{IncludeDirectories.webgpu}",
+        "%{IncludeDirectories.raylib}",
 
         "src/",
         "vendor/",
     }
 
-    libdirs {
-        "%{LibraryDirectories.vulkan}",
-        "%{LibraryDirectories.webgpu}"
-    }
-
     links {
-        "GLFW",
-        "glad",
-        "vulkan-1.lib",
         "ImGui"
     }
 
     filter "system:windows"
         systemversion "latest"
-        defines { "WEBGPU_BACKEND_D3D12" }
     
     filter { "action:vs*" }
         buildoptions { "/utf-8" }

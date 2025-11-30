@@ -1,8 +1,12 @@
 #pragma once
 
-#include <stdint.h>
+#include <memory>
 
 #include "Core/application/Layer.h"
+
+namespace Core {
+	class RayLibRenderer;
+}
 
 class DemoLayer : public Core::Layer
 {
@@ -13,7 +17,5 @@ public:
 	virtual void OnUpdate(float ts) override;
 	virtual void OnRender() override;
 private:
-	uint32_t m_Shader = 0;
-	uint32_t m_VertexArray = 0;
-	uint32_t m_VertexBuffer = 0;
+	std::unique_ptr<Core::RayLibRenderer> m_Renderer;
 };

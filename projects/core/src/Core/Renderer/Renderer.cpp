@@ -1,9 +1,6 @@
 #include "Renderer.h"
 
-#include "GLUtils.h"
-
 #include <iostream>
-#include <print>
 
 #include <stb/stb_image.h>
 

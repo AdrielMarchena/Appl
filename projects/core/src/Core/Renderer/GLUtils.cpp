@@ -1,6 +1,6 @@
 #include "GLUtils.h"
 
-#include <print>
+#include <iostream>
 
 namespace Renderer::Utils {
 
@@ -58,11 +58,11 @@ namespace Renderer::Utils {
 		if (severity != GL_DEBUG_SEVERITY_MEDIUM && severity != GL_DEBUG_SEVERITY_HIGH)
 			return;
 
-		const char* sourceStr = Utils::GLDebugSourceToString(source);
-		const char* typeStr = Utils::GLDebugTypeToString(type);
-		const char* severityStr = Utils::GLDebugSeverityToString(severity);
+	const char* sourceStr = Utils::GLDebugSourceToString(source);
+	const char* typeStr = Utils::GLDebugTypeToString(type);
+	const char* severityStr = Utils::GLDebugSeverityToString(severity);
 
-		std::println("[OpenGL] [{} - {} ({})]: [{}] {}", severityStr, typeStr, id, sourceStr, message);
+	std::cout << "[OpenGL] [" << severityStr << " - " << typeStr << " (" << id << ")]: [" << sourceStr << "] " << message << std::endl;
 	}
 
 	void InitOpenGLDebugMessageCallback()

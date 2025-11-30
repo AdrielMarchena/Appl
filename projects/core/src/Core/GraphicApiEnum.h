@@ -3,7 +3,6 @@
 namespace Core
 {
 	enum class GraphicApi {
-		OPENGL,
-		VULKAN,
+		RAYLIB,
 	};
 }

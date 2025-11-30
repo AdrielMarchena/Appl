@@ -1,9 +1,8 @@
 #include "Application.h"
 
-#include "Core/Renderer/GLUtils.h"
 #include "Core/logger/logger.h"
 
-#include <GLFW/glfw3.h>
+#include <raylib.h>
 
 #include <glm/glm.hpp>
 
@@ -14,18 +13,10 @@ namespace Core {
 
 	static Application* s_Application = nullptr;
 
-	static void GLFWErrorCallback(int error, const char* description)
-	{
-		std::cerr << "[GLFW Error]: " << description << std::endl;
-	}
-
 	Application::Application(const ApplicationSpecification& specification)
 		: m_Specification(specification)
 	{
 		s_Application = this;
-
-		glfwSetErrorCallback(GLFWErrorCallback);
-		glfwInit();
 
 		// Set window title to app name if empty
 		if (m_Specification.WindowSpec.Title.empty())
@@ -34,21 +25,12 @@ namespace Core {
 		m_Window = std::make_shared<Window>(m_Specification.WindowSpec);
 		m_Window->Create();
 
-		if (specification.WindowSpec.GraphicApi == GraphicApi::VULKAN) {
-		}
-
-		if (specification.WindowSpec.GraphicApi == GraphicApi::OPENGL) {
-			Renderer::Utils::InitOpenGLDebugMessageCallback();
-		}
-
 		Core::Log::Init();
 	}
 
 	Application::~Application()
 	{
 		m_Window->Destroy();
-
-		glfwTerminate();
 
 		s_Application = nullptr;
 	}
@@ -62,8 +44,6 @@ namespace Core {
 		// Main Application loop
 		while (m_Running)
 		{
-			glfwPollEvents();
-
 			if (m_Window->ShouldClose())
 			{
 				Stop();
@@ -107,6 +87,6 @@ namespace Core {
 
 	float Application::GetTime()
 	{
-		return (float)glfwGetTime();
+		return ::GetTime();
 	}
 }

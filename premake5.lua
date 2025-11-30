@@ -1,5 +1,5 @@
 -- premake5.lua (root)
-include "Dependencies.lua"
+include "dependencies.lua"
 
 workspace "Appl"
 	startproject "Appl"
@@ -36,6 +36,7 @@ group "Dependencies"
 include "vendors/glfw"
 include "vendors/glad"
 include "vendors/imgui"
+include "vendors/raylib"
 
 group "Core"
 include "projects/core"

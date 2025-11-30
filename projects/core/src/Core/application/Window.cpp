@@ -1,9 +1,14 @@
 #include "Window.h"
 
-#include "Core/Renderer/GLUtils.h"
-
 #include <iostream>
 #include <assert.h>
+
+#define GRAPHICS_API_OPENGL_33
+#define RAYLIB_SUPPORT_MODULE_RSHAPES
+#define RAYLIB_SUPPORT_MODULE_RTEXTURES
+#define RAYLIB_SUPPORT_MODULE_RMODELS
+#define RAYLIB_SUPPORT_MODULE_RTEXT
+#include <raylib.h>
 
 namespace Core {
 
@@ -19,70 +24,36 @@ namespace Core {
 
 	void Window::Create()
 	{
-		if (m_Specification.GraphicApi == GraphicApi::VULKAN)
-		{
-			CreateVulkan();
-		}
-
-		if (m_Specification.GraphicApi == GraphicApi::OPENGL)
-		{
-			CreateOpenGl();
-		}
+		CreateRayLib();
 	}
 
 	void Window::Destroy()
 	{
-		if (m_Handle)
-			glfwDestroyWindow(m_Handle);
-
-		m_Handle = nullptr;
+		CloseWindow();
 	}
 
 	void Window::Update()
 	{
-		//glfwSwapBuffers(m_Handle);
+		// RayLib handles buffer swapping in EndDrawing()
 	}
 
 	glm::vec2 Window::GetFramebufferSize()
 	{
-		int width, height;
-		glfwGetFramebufferSize(m_Handle, &width, &height);
-		return { width, height };
+		return { (float)GetScreenWidth(), (float)GetScreenHeight() };
 	}
 
 	bool Window::ShouldClose() const
 	{
-		return glfwWindowShouldClose(m_Handle) != 0;
+		return WindowShouldClose();
 	}
 
-	void Window::CreateVulkan()
+	void Window::CreateRayLib()
 	{
-		glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
-		glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
-
-		m_Handle = glfwCreateWindow(m_Specification.Width, m_Specification.Height,
-			m_Specification.Title.c_str(), nullptr, nullptr);
-	}
-
-	void Window::CreateOpenGl()
-	{
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
-		glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 6);
-		glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-		glfwWindowHint(GLFW_OPENGL_DEBUG_CONTEXT, GL_TRUE);
-
-		m_Handle = glfwCreateWindow(m_Specification.Width, m_Specification.Height,
-			m_Specification.Title.c_str(), nullptr, nullptr);
-
-		if (!m_Handle)
+		InitWindow(m_Specification.Width, m_Specification.Height, m_Specification.Title.c_str());
+		
+		if (m_Specification.VSync)
 		{
-			std::cerr << "Failed to create GLFW window!\n";
-			assert(false);
+			SetTargetFPS(60);
 		}
-
-		glfwMakeContextCurrent(m_Handle);
-		gladLoadGL(glfwGetProcAddress);
-
-		glfwSwapInterval(m_Specification.VSync ? 1 : 0);
 	}
 }

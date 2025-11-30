@@ -1,7 +1,7 @@
 project "Appl"
     kind "consoleapp"
     language "C++"
-    cppdialect "C++23"
+    cppdialect "C++latest"
     staticruntime "on"
 
     targetdir ("%{wks.location}/bin/%{cfg.buildcfg}/%{prj.name}")
@@ -13,34 +13,41 @@ project "Appl"
     }
 
     includedirs {
-        "%{IncludeDirectories.GLFW}",
         "%{IncludeDirectories.Core}",
         "%{IncludeDirectories.spdlog}",
         "%{IncludeDirectories.glm}",
-        "%{IncludeDirectories.glad}",
-        "%{IncludeDirectories.vulkan}",
         "%{IncludeDirectories.imgui}",
         "%{IncludeDirectories.entt}",
+        "%{IncludeDirectories.raylib}",
         "src/",
     }
 
-    libdirs {
-        "%{LibraryDirectories.vulkan}",
-        "%{LibraryDirectories.webgpu}"
+    filter "system:linux"
+        -- Link order: Core -> raylib -> ImGui -> system libs
+        -- Using linkoptions to ensure raylib comes right after Core
+        linkoptions {
+            "-Wl,--whole-archive",
+            "%{wks.location}/vendors/raylib/build/raylib/libraylib.a",
+            "-Wl,--no-whole-archive"
+        }
+    
+    links {
+        "Core",
+        "ImGui"
     }
 
-    links {
-        "GLFW",
-        "Core",
-        "glad",
-        "vulkan-1.lib",
-        "ImGui",
-        "wgpu_native.lib"
-    }
+    filter "system:linux"
+        links {
+            "GL",
+            "m",
+            "pthread",
+            "dl",
+            "rt",
+            "X11"
+        }
 
     filter "system:windows"
         systemversion "latest"
-        defines { "WEBGPU_BACKEND_D3D12" }
 
     filter { "action:vs*" }
         buildoptions { "/utf-8" }

@@ -1,10 +1,6 @@
 #pragma once
 
-#include "Core/Renderer/GLUtils.h"
 #include "Core/GraphicApiEnum.h"
-
-#define GLFW_INCLUDE_VULKAN
-#include <GLFW/glfw3.h>
 
 #include <glm/glm.hpp>
 #include <string>
@@ -17,7 +13,7 @@ namespace Core {
 		uint32_t Height = 720;
 		bool IsResizeable = true;
 		bool VSync = true;
-		GraphicApi GraphicApi = GraphicApi::OPENGL;
+		GraphicApi Api = GraphicApi::RAYLIB;
 	};
 
 	class Window
@@ -35,14 +31,10 @@ namespace Core {
 
 		bool ShouldClose() const;
 
-		GLFWwindow* GetHandle() const { return m_Handle; }
-
 	private:
-		void CreateVulkan();
-		void CreateOpenGl();
+		void CreateRayLib();
 	private:
 		WindowSpecification m_Specification;
-		GLFWwindow* m_Handle = nullptr;
 	};
 
 }
