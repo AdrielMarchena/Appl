@@ -436,5 +436,7 @@ FodyWeavers.xsd
 
 # End of https://www.toptal.com/developers/gitignore/api/visualstudio,c++
 
-vendors/**
+# Ignore everything in vendors folder except premake5.lua files
+vendors/**/*
+!vendors/**/
 !vendors/**/premake5.lua
