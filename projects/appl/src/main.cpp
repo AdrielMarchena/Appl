@@ -3,6 +3,7 @@
 #include <string>
 #include "Core/application/Application.h"
 
+#include "Layers/ImGuiLayer.h"
 #include "Layers/DemoLayer.h"
 #include <Core/GraphicApiEnum.h>
 
@@ -20,6 +21,7 @@ int main(int argc, char** argv)
 	appSpecifications.WindowSpec.Api = Core::GraphicApi::RAYLIB;
 
 	Core::Application* app = new Core::Application(appSpecifications);
+	app->PushLayer<ImGuiLayer>();
 	app->PushLayer<DemoLayer>();
 	app->Run();
 	delete app;

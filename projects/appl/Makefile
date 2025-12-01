@@ -110,8 +110,10 @@ GENERATED :=
 OBJECTS :=
 
 GENERATED += $(OBJDIR)/DemoLayer.o
+GENERATED += $(OBJDIR)/ImGuiLayer.o
 GENERATED += $(OBJDIR)/main.o
 OBJECTS += $(OBJDIR)/DemoLayer.o
+OBJECTS += $(OBJDIR)/ImGuiLayer.o
 OBJECTS += $(OBJDIR)/main.o
 
 # Rules
@@ -177,6 +179,9 @@ endif
 # #############################################
 
 $(OBJDIR)/DemoLayer.o: src/Layers/DemoLayer.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
+$(OBJDIR)/ImGuiLayer.o: src/Layers/ImGuiLayer.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/main.o: src/main.cpp

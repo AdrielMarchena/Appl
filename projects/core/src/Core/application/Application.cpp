@@ -1,6 +1,7 @@
 #include "Application.h"
 
 #include "Core/logger/logger.h"
+#include "Core/ImGui/ImGuiContext.h"
 
 #include <raylib.h>
 
@@ -26,10 +27,12 @@ namespace Core {
 		m_Window->Create();
 
 		Core::Log::Init();
+		ImGuiContext::Init(nullptr);
 	}
 
 	Application::~Application()
 	{
+		ImGuiContext::Shutdown();
 		m_Window->Destroy();
 
 		s_Application = nullptr;
@@ -58,9 +61,21 @@ namespace Core {
 			for (const std::unique_ptr<Layer>& layer : m_LayerStack)
 				layer->OnUpdate(timestep);
 
+			// Start frame
+			BeginDrawing();
+
 			// NOTE: rendering can be done elsewhere (eg. render thread)
 			for (const std::unique_ptr<Layer>& layer : m_LayerStack)
 				layer->OnRender();
+
+			// ImGui rendering (must be before EndDrawing)
+			ImGuiContext::NewFrame();
+			for (const std::unique_ptr<Layer>& layer : m_LayerStack)
+				layer->OnImGui();
+			ImGuiContext::Render();
+
+			// End frame
+			EndDrawing();
 
 			m_Window->Update();
 		}

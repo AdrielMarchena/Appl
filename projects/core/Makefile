@@ -110,12 +110,14 @@ GENERATED :=
 OBJECTS :=
 
 GENERATED += $(OBJDIR)/Application.o
+GENERATED += $(OBJDIR)/ImGuiContext.o
 GENERATED += $(OBJDIR)/RayLibRenderer.o
 GENERATED += $(OBJDIR)/Window.o
 GENERATED += $(OBJDIR)/healthcheck.o
 GENERATED += $(OBJDIR)/logger.o
 GENERATED += $(OBJDIR)/stb_image.o
 OBJECTS += $(OBJDIR)/Application.o
+OBJECTS += $(OBJDIR)/ImGuiContext.o
 OBJECTS += $(OBJDIR)/RayLibRenderer.o
 OBJECTS += $(OBJDIR)/Window.o
 OBJECTS += $(OBJDIR)/healthcheck.o
@@ -184,6 +186,9 @@ endif
 # File Rules
 # #############################################
 
+$(OBJDIR)/ImGuiContext.o: src/Core/ImGui/ImGuiContext.cpp
+	@echo "$(notdir $<)"
+	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"
 $(OBJDIR)/RayLibRenderer.o: src/Core/RayLibRender/RayLibRenderer.cpp
 	@echo "$(notdir $<)"
 	$(SILENT) $(CXX) $(ALL_CXXFLAGS) $(FORCE_INCLUDE) -o "$@" -MF "$(@:%.o=%.d)" -c "$<"

@@ -16,6 +16,9 @@ public:
 
 	virtual void OnUpdate(float ts) override;
 	virtual void OnRender() override;
+	virtual void OnImGui() override;
 private:
 	std::unique_ptr<Core::RayLibRenderer> m_Renderer;
+	float m_Rotation = 0.0f;
+	float m_RotationSpeed = 50.0f;
 };

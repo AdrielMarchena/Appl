@@ -12,8 +12,9 @@ namespace Core {
 
 		virtual void OnEvent(Event& event) {}
 
-		virtual void OnUpdate(float ts) {}
-		virtual void OnRender() {}
-		virtual void OnEndLoop() {}
+	virtual void OnUpdate(float ts) {}
+	virtual void OnRender() {}
+	virtual void OnImGui() {}
+	virtual void OnEndLoop() {}
 	};
 }
